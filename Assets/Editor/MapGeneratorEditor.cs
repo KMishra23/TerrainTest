@@ -9,19 +9,19 @@ public class MapGeneratorEditor : Editor
     public override void OnInspectorGUI()
     {
         MapGenerator mapGen = (MapGenerator)target;
-        EditorGUILayout.LabelField("Text1", "Text2");
+        //EditorGUILayout.LabelField("Text1", "Text2");
 
         if(DrawDefaultInspector())  
         {
             if(mapGen.autoUpdate)
             {
-                mapGen.GenerateMap();
+                mapGen.DrawMapInEditor();
             }
         }
 
         if(GUILayout.Button("Generate"))
         {
-            mapGen.GenerateMap();
+            mapGen.DrawMapInEditor();
         }
     }
 }
